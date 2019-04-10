@@ -1,0 +1,22 @@
+<!-- body -->
+<div class="ad-margin">
+  <div class="row">
+    <div class="col">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3>Active Incidants</h3>
+        </div>
+        <div class="panel-body">
+          <kendo-grid [kendoGridBinding]="gridData" [pageSize]="10" [pageable]="true" [sortable]="true" [filterable]="true" [groupable]="true"
+            [height]="510">
+            <kendo-grid-column field="INC" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="Requestor" [width]="120"></kendo-grid-column>
+            <kendo-grid-column field="Issue" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="Description" [width]="140"></kendo-grid-column>
+            <kendo-grid-column field="Created" [width]="130"></kendo-grid-column>
+          </kendo-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

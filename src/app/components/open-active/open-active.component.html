@@ -1,0 +1,24 @@
+<!-- body -->
+<div class="ad-margin">
+  <div class="row">
+    <div class="col">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3>Active Incidants</h3>
+        </div>
+        <div class="panel-body">
+          <kendo-grid [kendoGridBinding]="gridData" [pageSize]="10" [pageable]="true" [sortable]="true" [filterable]="true" [groupable]="true"
+            [height]="510">
+            <kendo-grid-column field="incidentId" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="requestor" [width]="120"></kendo-grid-column>
+            <kendo-grid-column field="status" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="location" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="category" [width]="130"></kendo-grid-column>
+            <kendo-grid-column field="subcategory" [width]="130"></kendo-grid-column>
+            <kendo-grid-column field="createdAt" [width]="130"></kendo-grid-column>
+          </kendo-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+body {
+    background-color: #eee;
+}
+.ad-margin{
+    margin: 20px;
+}
+
+*[role="form"] {
+    // max-width: 530px;
+    padding: 15px;
+   margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+span.req {
+    color:red;
+    font-size: 112%;
+}
+
+.ad-h3{
+color:darkblue;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }

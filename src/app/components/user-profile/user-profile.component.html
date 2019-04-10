@@ -1,0 +1,91 @@
+<!-- <div class="container panel panel-default">
+  <div class="col-md-4">
+
+  </div>
+    <div class="panel-body col-md-4">
+          <div class="row">
+            <div style="padding-bottom:5%">
+            <i class="fa fa-user fa-5x"></i>
+            </div>
+          </div>
+  
+          <div class="row" style="text-align:center; padding-bottom:3%" *ngFor="let c of incidents">
+            <img src="/assets/Admin-imgs/{{c.profilePic}}"  width:200px height:200px>
+          </div>
+  
+          <div>
+            <!-- <button class="btn btn-default" id="fileupload-example-5" (click)="upload()">
+              <input type="file" id="file" (change)="selectFile($event)">
+              <span>Upload Picture</span>
+          </button> 
+           <label class="btn btn-default">
+              <input type="file" id="text1"  accept="image/png, image/jpeg, image/gif" name="text1" (change)="selectFile($event)" >
+            </label>
+            <button class="btn btn-success" (click)="upload()">Upload</button>
+          </div>
+  
+          <div class="row">
+            <h3>Name: {{username}} </h3>
+            <h3>Designation: Associate</h3>
+            <h3>Email: {{email}}</h3>
+            <!-- <h3>Mob.no : <span>your Mobile no</span></h3> 
+            <h3>Location :
+              <select class=" selectpicker" [(ngModel)]="location" name="location" ngSelected="selected" required>
+                <option selected>---Select Category---</option> 
+              <option *ngFor="let loc of locations" >{{loc.cityName}}</option>             
+               </select>
+            </h3>
+            <button type="submit" (click)="save()">Save</button>
+          </div>
+    </div>
+
+    <div class="col-md-4">
+        
+    </div>
+  </div> -->
+  <!-- updated code ruby -->
+
+  <div class="container panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <!-- <div class="col-sm-4">
+          </div> -->
+          <div class="">
+              <div class="row" style="text-align:center; padding-bottom:3%">
+                  <i class="fa fa-user fa-5x"> </i>
+              </div>
+            <div class="row" style="text-align:center; padding-bottom:3%" class="fa fa-user fa-5x" *ngFor="let c of incidents">
+               <img src="/assets/Admin-imgs/{{c.profilePic}}"  width:200px height:200px>
+            </div>
+    
+            <div class="row" style="text-align:center">
+              <!-- <button class="btn btn-default" id="fileupload-example-5" (click)="upload()">
+                <input type="file" id="file" (change)="selectFile($event)">
+                <span>Upload Picture</span>
+            </button> -->
+              <label class="btn btn-default">
+                <input type="file" (change)="selectFile($event)" >
+              </label>
+              <button class="btn btn-success" (click)="upload()">Upload</button>
+            </div>
+    
+            <div class="row">
+                <h3>Name: {{username}} </h3>
+                <h3>Department: {{department}}</h3>
+                <h3>Email:{{email}}</h3>
+                <!-- <h3>Mob.no : <span>your Mobile no</span></h3> -->
+                <h3>Location :
+                  <select class=" selectpicker" [(ngModel)]="location" name="location" ngSelected="selected" required>
+                    <option selected>---Select Category---</option> 
+                  <option *ngFor="let loc of locations" >{{loc.cityName}}</option>             
+                   </select>
+                </h3>
+                <button type="submit" (click)="save()">Save</button>
+              </div>
+
+              <!-- <div class="col-sm-4">
+              </div> -->
+            </div>
+        </div>
+      </div>
+    

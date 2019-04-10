@@ -1,0 +1,110 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" class="sidebar">
+     <div class="brand-sidebar-header">
+        <div class="sidenav-header d-flex align-items-center
+           justify-content-center">
+           <!-- User Info-->
+           <div class="brand-sidenav-header-inner text-center"><img src="/assets/Admin-imgs/capcoImage.png" alt="user" width="80px" height="50px">
+           </div>
+           <img src="/assets/Admin-imgs/capcoImage.png" alt="brand" class="  brand-small" width="50px" height="50px">
+        </div>
+     </div>
+     <div class="sidebar-header">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center
+           justify-content-center">
+           <!-- User Info-->
+           <div class="sidenav-header-inner text-center">
+              <img src="/assets/Admin-imgs/avatar-1.jpg" alt="user" class="img-fluid img-circle">
+              <h2 class="h5">Anderson Hardy</h2>
+              <h3><span>Web Developer</span></h3>
+           </div>
+           <img src="/assets/Admin-imgs/avatar-1.jpg" alt="brand" class=" img-fluid img-circle brand-small" width="50px" height="50px">
+        </div>
+     </div>
+     <ul class="list-unstyled components" style=" overflow-y:auto;">
+        <li>
+          <a routerLink="admin-dashboard" data-toggle="tooltip" data-placement="left" title="Dashboard">
+          <i class="fa fa-server"></i>
+          <span>Dashboard</span> 
+          </a>
+          </li>
+        <li>
+           <a href="#incidentSubmenu" data-toggle="collapse" aria-expanded="false" class="fa fa-angle-down">
+           <i class="fa fa-file"></i>
+           <span>Incident</span>
+           </a>
+           <ul class="collapse list-unstyled" id="incidentSubmenu">
+              <li><a routerLink="user-incident-form">
+                 <i class="fa fa-user"></i>
+                 <span >Create New</span></a>
+              </li>
+              <li><a routerLink="open-active">
+                 <i class="fa fa-envelope-open-o"></i>
+                 <span >Open/Active</span></a>
+              </li>
+              <li><a routerLink="admin-assigned">
+                 <i class="fa fa-thumb-tack"></i>
+                 <span >Assigned to me</span></a>
+              </li>
+              <li><a routerLink="admin-unassigned">
+                 <i class="fa fa-tasks"></i>
+                 <span >Open Unassigned</span></a>
+              </li>
+              <li><a routerLink="resolved">
+                 <i class="fa fa-thumbs-up"></i>
+                 <span >Resolved</span></a>
+              </li>
+           </ul>
+        </li>
+        <li>
+           <a href="#masterDataSubmenu" data-toggle="collapse" aria-expanded="false" class="fa fa-angle-down">
+           <i class="fa fa-database"></i>
+           <span>MasterData</span>
+           </a>
+           <ul class="collapse list-unstyled" id="masterDataSubmenu">
+              <li><a routerLink="user-registration" data-toggle="tooltip" data-placement="bottom" title="Add User">
+                 <i class="fa fa-user-plus"></i>
+                 <span >Add User</span></a>
+              </li>
+              <li><a routerLink="user-group" data-toggle="tooltip" data-placement="bottom" title="User Group">
+                 <i class="fa fa-user"></i>
+                 <span >User Group</span></a>
+              </li>
+              <li><a routerLink="admin-country" data-toggle="tooltip" data-placement="bottom" title="Cities">
+                 <i class="fa fa-users"></i>
+                 <span >Cities</span></a>
+              </li>
+              <li><a routerLink="admin-categories" data-toggle="tooltip" data-placement="bottom" title="Categories">
+                 <i class="fa fa-users"></i>
+                 <span >Categories</span></a>
+              </li>
+             
+           </ul>
+          </li>
+        <li>
+           <a routerLink="/user-login" data-toggle="tooltip" data-placement="bottom" title="Home"><i class="fa fa-sign-out"></i>
+           <span>Logout</span> 
+           <span class="pull-right-container">
+           <i class="fa fa-angle-rigth pull-right"></i>
+           </span>
+           </a>
+        </li>
+     </ul>
+  </nav>
+  <!-- Page content -->
+  <div class="main">
+     <!-- navbar header -->
+     <nav class="navbar navbar-default">
+        <div class="navbar-header">
+           <button type="button" id="sidebarCollapse" class="btn navbar-btn">
+           <i class="fa fa-list"></i>
+           </button>
+        </div>
+     </nav>
+     <router-outlet></router-outlet>
+     <!-- <app-dashboard-footer></app-dashboard-footer> -->
+  </div>
+</div>
+

@@ -1,0 +1,64 @@
+<div class="ad-margin">
+    <div class="inner">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <button aria-label="Form menu" class="btn btn-link glyphicon glyphicon-menu-hamburger"></button> New Incident
+          <!-- <label id="#bb" class="attachment pull-right glyphicon glyphicon-paperclip fa-2x"> 
+              <input type="file" id="File" size="60" >
+              </label>  -->
+        </div>
+        <div class="panel-body">
+            <form enctype="multipart/form-data">
+            <input type="file" class="form-control" (change)="selectFile($event)">
+          <h4 style="border-bottom:1px solid grey">Incident</h4>
+          <!-- <form > -->
+              <div class="form-group">
+                  <label> Requestor</label> 
+                  <input type="text" class="form-control" [(ngModel)]="requestor" name="requestor">
+                </div>
+            
+                 <div class="form-group">
+                  <label><span class="mandatory-symbol">* </span>Location</label>
+                  <select class="form-control" [(ngModel)]="location" name="location">
+                      <option selected>---Select Category---</option> 
+                    <option *ngFor="let loc of locations ">{{loc.cityName}}</option>             
+                     </select>
+                </div> 
+                
+                <div class="form-group">
+                  <label><span class="mandatory-symbol">* </span>Category</label>
+                  <select class="form-control" name="category" [(ngModel)]="category" (change)="setOptions()">
+                    <option selected>---Select Category---</option>
+                <option *ngFor="let c of categories">{{c.categoryName}}</option>
+                
+              </select>
+            
+                </div>
+                
+              
+        
+                <div class="form-group">
+                  <label><span class="mandatory-symbol">* </span>Sub Category</label>
+                  <select id="" class="form-control" name="subcategory" [(ngModel)]="subcategory">
+                    <option selected>---Select Sub-Category---</option>
+                    <option *ngFor="let c of subcategories">{{c.subcategoryname}}</option>
+                  </select>
+                 
+                </div>
+  
+                <!-- <div class="form-group">
+                    <label for="exampleFormControlTextarea1"><span class="mandatory-symbol">* </span>Issue</label>
+                    <textarea class="form-control" [(ngModel)]="description" name="description" rows="1" required ></textarea>
+                  </div> -->
+        
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><span class="mandatory-symbol">* </span>Description</label>
+                  <textarea class="form-control" [(ngModel)]="description" name="description" rows="2" ></textarea>
+                </div>
+            <button value="" class="btn btn-primary" (click)="upload()">Save</button>          
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,138 @@
+<div class="ad-margin">
+    <div class="inner">
+  <div class="panel panel-default">
+  <div class="panel-heading">
+      <button class="btn btn-default navbar-btn fa fa-chevron-left" [routerLink]="['/admin-header/admin-assigned']"></button>
+      <!-- <button class="fa fa-bars fa-2x barr"></button> -->
+      <button class="btn btn-link pull-right fa fa-paperclip fa-2x"></button>
+  </div>
+  <form style="padding:20px">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Number</label>
+        <input type="text" class="form-control" name="incNo" id="usr" disabled=true [(ngModel)]=incNo>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Requester</label>
+        <input type="text" class="form-control" name="req" id="requester" disabled=true [(ngModel)]=req>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <label>Status</label>
+      <div class="dropdown">
+        <select id="state" class="form-control" name="status"  [(ngModel)]=status>
+          <option selected>Select status </option>
+          <option *ngFor="let s of status1">{{s}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6 form-group">
+        <label>Capco Id</label>
+        <input type="text" class="form-control" name="userid" id="usr" disabled=true [(ngModel)]=userid>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 form-group">
+        <div class="input-group form-group">
+            <label >Assigned to</label>
+          <input type="text" class="form-control" name="assignedto" placeholder="Search" disabled=true [(ngModel)]=assignedto>
+          <div class="input-group-btn">
+            <button class="btn btn-default bb" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        
+      <div class="input-group form-group">
+          <label>Location</label>
+        <input type="text" class="form-control" disabled=true name="location"  [(ngModel)]=location>
+          <div class="input-group-btn">
+            <button class="btn btn-default bb" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 "></div>
+    <div class="col-md-6 "></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Category</label>
+        <input type="text" class="form-control" id="category" disabled=true name="category"  [(ngModel)]=category>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Sub-Category</label>
+        <input type="text" class="form-control" id="subcategory" disabled=true name="subcategory"  [(ngModel)]=subcategory>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 form-group">
+        <label>Description</label>
+    <textarea class="form-control" name="description" id="usr" disabled=true [(ngModel)]="description"></textarea>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Created</label>
+        <input type="text" class="form-control" name="created" id="reuester" disabled=true [(ngModel)]=created>
+      </div>
+    </div>
+  </div>
+  <label>Closure Information</label>
+  <div class="row" style="padding:15px;">
+        <div class="tab-content ttt" >
+          <div id="menu2" class="tab-pane fade in active tab_padding">
+          <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="problem">Resolved by</label>
+                  <input type="text" class="form-control" id="resolvedBy" disabled=true name="resolvedBy"  [(ngModel)]=resolvedBy>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+              <div class="col-md-4">
+               <div class="form-group">
+                  <label for="problem">Resolved Date and Time</label>
+                  <input type="text" class="form-control" id="resolvedAt" disabled=true name="resolvedAt"  [(ngModel)]=resolvedAt>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label><span class="req">*</span> &nbsp;Resolution Notes</label>
+                <textarea class="form-control" id="usr" name="solution"  [(ngModel)]=solution></textarea>
+                </div>
+              </div>
+        </div>
+      </div>  
+  </div>
+  <div class="row">
+    <button class="btn btn-primary form-button" type="submit"  (click)="saveResolverForm()"  >Submit</button>
+    <button class="btn btn-default form-button2">Cancel</button>
+  </div>
+
+</form>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+

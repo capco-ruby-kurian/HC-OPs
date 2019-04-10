@@ -1,0 +1,132 @@
+<div class="ad-margin">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row top-row">
+            <div class="col-md-3">
+              <h3 class="ad-darkblue">Categories</h3>
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+              <!-- Trigger the modal with a button -->
+              <button type="button" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>Add New Categories</button>
+              <!-- <h3><a [routerLink]="['/admin-header/admin-addnewcatagory']"><i class="fa fa-plus plus-icon ad-darkblue ad-icon-margin"></i>Add New Categories</a></h3> -->
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <kendo-grid [data]="gridData" [pageSize]="5" [sortable]="true" [sort]="sort" [pageable]="true" [height]="550" (detailExpand)="showSubCat($event)">
+            <kendo-grid-column field="categoryName"  title="CategoryName" width="150"> </kendo-grid-column>
+            <div *kendoGridDetailTemplate="let dataItem">
+              <app-admin-subcategories [categoryDetails]="dataItem"></app-admin-subcategories>
+            </div>
+          </kendo-grid>
+          <!-- Modal -->
+          <ng-template #template>
+            <form class="k-form" id="surveyForm">
+              <div class="row">
+                <div class="col-xs-12">
+                  <legend>Add SubCategories to existing Category</legend>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 ">
+                  <label class="k-form-field">
+                        <span>Sub-Category</span>
+                      </label>
+                </div>
+                <div class="col-xs-6 input_fields_wrap">
+                  <input class="k-textbox" placeholder="enter subcategory.." name="mytext[]" />
+                </div>
+                <div class="col-xs-2">
+                  <button class="add_field_button" (click)="hello()"><span class="k-icon k-i-plus"></span></button>
+                </div>
+              </div>
+              <div class="row" style="padding:20px;">
+
+                <div class="text-right">
+                  <button type="button" class="k-button">Cancel</button>
+                  <button type="button" class="k-button k-primary">Submit</button>
+                </div>
+
+              </div>
+            </form>
+          </ng-template>
+
+
+          <!-- table -->
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add New Catagory</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="ad-margin">
+                    <div class="row">
+                      <form method="post" class="form-horizontal" id="surveyForm" #categoryForm="ngForm">
+                        <div class="form-group">
+                          <label class="col-xs-3 control-label"><span class="req">* </span> Catagory</label>
+                          <div class="col-xs-5">
+                            <input type="text" class="form-control" name="categoryName" [(ngModel)]="categoryName" #category="ngModel" required />
+                            <div *ngIf="category.invalid && (category.dirty || category.touched)" class="alert alert-danger">
+                              <div *ngIf="category.errors.required">
+                                Category is required.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-xs-3 control-label"><span class="req">* </span>Sub Catagory</label>
+                          <div class="col-xs-5">
+                            <input type="text" class="form-control" name="subcategoryname" [(ngModel)]="subcategoryname" #subCategory="ngModel" required
+                            />
+                            <div *ngIf="subCategory.invalid && (subCategory.dirty || subCategory.touched)" class="alert alert-danger">
+                              <div *ngIf="subCategory.errors.required">
+                                Sub Category is required.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button>
+                          </div>
+                        </div>
+
+                        <!-- The option field template containing an option field and a Remove button -->
+                        <div class="form-group hide" id="optionTemplate">
+                          <div class="col-xs-offset-3 col-xs-5">
+                            <input class="form-control excludeSubCategory" type="text" name="subcategoryname" [(ngModel)]="subcategoryname" #subCat="ngModel"
+                              required />
+                            <div *ngIf="subCat.invalid && (subCat.dirty || subCat.touched)" class="alert alert-danger">
+                              <div *ngIf="subCat.errors.required">
+                                Sub Category is required.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" (click)="addNewCategories()" data-dismiss="modal" class="btn btn-primary btn-md" [disabled]="categoryForm.invalid"><i class="fa fa-floppy-o" aria-hidden="true"> Save </i></button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- panel -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

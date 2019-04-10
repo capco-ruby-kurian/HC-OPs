@@ -1,0 +1,106 @@
+<div class="ad-margin">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-3">
+              <h3><a href="#">User Group</a></h3>
+          </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-1"></div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>Add New User Group</button>
+            <!-- <h3><a [routerLink]="['/admin-header/admin-addnewgroups']"><i class="fa fa-plus"></i>Add New User Group</a></h3> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <form novalidate #myForm="ngForm">
+      <kendo-grid [kendoGridBinding]="gridData" [height]="410" [pageSize]="10" [pageable]="true" [groupable]="true" [sortable]="true"
+        [filterable]="true" [selectable]="true" (edit)="editHandler($event)" (cancel)="cancelHandler($event)" (save)="saveHandler($event)"
+        (add)="addHandler($event)">
+        <kendo-grid-column field="userGroupCode" title="Group Code" [width]="100"></kendo-grid-column>
+        <kendo-grid-column field="userGroupName" title="Group Name" [width]="120"></kendo-grid-column>
+        <kendo-grid-column [width]="120">
+          <ng-template kendoGridCellTemplate let-dataItem let-isNew="isNew">
+            <button kendoGridEditCommand [primary]="true" class='k-button'  ><span class="k-icon k-i-pencil"></span></button>
+            <button kendoGridRemoveCommand class='k-button' (click)="removeItems(dataItem)"><span class="k-icon k-i-delete" ></span></button>
+            <!-- save command directive, will be visible when in edit mode -->
+            <button kendoGridSaveCommand [disabled]="myForm.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
+            <!-- cancel command directive, will be visible when in edit mode -->
+            <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+
+          </ng-template>
+        </kendo-grid-column>
+      </kendo-grid>
+    </form>
+    <!-- end of table -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <div class="ad-margin">
+              <form id="surveyForm" #userGroupForm="ngForm">
+                <div class="row">
+                  <div class="panel">
+                    <div class=" row form-group">
+                      <label for="groupcode" class="col-sm-3 control-label"><span class="req">* </span> Group Code :</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="userGroupCode" class="form-control" [(ngModel)]="userGroupCode" #userGroupCodeText="ngModel" required>
+                        <div *ngIf="userGroupCodeText.invalid && (userGroupCodeText.dirty || userGroupCodeText.touched)" class="alert alert-danger">
+                          <div *ngIf="userGroupCodeText.errors.required">
+                            User Group is required.
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class=" row form-group">
+                      <label for="groupname" class="col-sm-3 control-label"><span class="req">* </span> Group Name :</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="userGroupName" class="form-control" [(ngModel)]="userGroupName" #userGroupNameText="ngModel" required>
+                        <div *ngIf="userGroupNameText.invalid && (userGroupNameText.dirty || userGroupNameText.touched)" class="alert alert-danger">
+                          <div *ngIf="userGroupNameText.errors.required">
+                            Group Name is required.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <label for="groupname" class="control-label"> Add Group User </label>
+                      <button type="button" class="btn btn-default addButton "><i class="fa fa-plus"></i></button>
+                    </div>
+
+                    <div class="form-group hide" id="optionTemplate">
+                      <div class="col-xs-offset-3 col-xs-5">
+                        <input class="form-control" type="text" name="option[]" />
+                      </div>
+                      <div class="col-xs-4">
+                        <button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" (click)="addNewUserGroup()" class="btn btn-primary" [disabled]="userGroupForm.invalid"><i class="fa fa-floppy-o" aria-hidden="true" data-dismiss="modal"> Save </i></button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- panel -->
+  </div>
+</div>
+</div>
+</div>

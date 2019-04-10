@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+// import bootstrap
+//@import "../node_modules/bootswatch/dist/darkly/_variables.scss";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:700');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Signika');
+// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic
+//@import "../node_modules/bootswatch/dist/darkly/_bootswatch.scss";
+
+// @import "../node_modules/bootswatch/dist/yeti/_variables.scss";
+// @import "../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "../node_modules/bootswatch/dist/yeti/_bootswatch.scss";
+.inner{
+    height: 100%;
+    position: relative;
+    margin:0px;
+}
+
+.inner{
+    position: relative;
+    height:100%;
+  //  margin:0;
+}
+
+@import "~@progress/kendo-theme-default/scss/all";

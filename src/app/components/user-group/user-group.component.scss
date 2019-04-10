@@ -1,0 +1,33 @@
+.ad-margin{
+    margin: 20px;
+}
+
+
+.mytable
+{
+    thead, tbody{       
+        padding:10px;
+        .fa-filter{
+            float: right;
+        }       
+        td{
+            font-weight: bold;
+            padding: 0.5em;
+            font-family: serif;
+        }
+    }
+    tbody {
+        text-align: left;
+        // display: block;
+            height:100px;
+            overflow-y:auto;
+    }
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }

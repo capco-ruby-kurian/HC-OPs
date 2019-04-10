@@ -1,0 +1,243 @@
+export const customers = [
+    {
+        'INC':'INC0019901',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    },
+    {
+        'INC':'INC0019902',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+     {
+        'INC':'INC0019903',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019904',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+    }, 
+     {
+        'INC':'INC0019905',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019906',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    },  {
+        'INC':'INC0019907',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    },  {
+        'INC':'INC0019908',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019909',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+    },  {
+        'INC':'INC0019910',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    },  {
+        'INC':'INC0019911',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    },
+    {
+        'INC':'INC0019912',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    },
+    {
+        'INC':'INC0019913',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019914',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, {
+        'INC':'INC0019915',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019916',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019917',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": true,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019918',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019919',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019920',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019921',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": true,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019922',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, {
+        'INC':'INC0019923',
+        'Requestor':'Smitia Kulkarni',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }, 
+    {
+        'INC':'INC0019924',
+        'Requestor':'Sanjay Ahuja',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": true,
+        "Status":"Active"
+    },
+    {
+        'INC':'INC0019925',
+        'Requestor':'Shruti Kul',
+        'Issue':'On-Boarding',
+        'Description':'Offer-letter',
+        'Created':'20/08/2018 09:22:09',
+        'AssignedTo':'Jaya Joseph',
+        "Discontinued": false,
+        "Status":"Active"
+    }];

@@ -1,0 +1,34 @@
+.ad-margin{
+    margin: 20px;
+}
+.hc-userGroupContent{
+    background-color:white;
+    padding: 0 0px;    
+}
+.hc-addNewUserDiv{
+    font-size: 1.5em;
+    text-decoration: none;
+    float: right;
+}
+.mytable
+{
+     
+    thead, tbody{
+       
+        padding:10px;
+        .fa-filter{
+            float: right;
+        }
+        td{
+            padding: 0.5em;
+        }
+        th{
+            font-size: 1em;
+        }
+    }
+
+    
+}
+nav{
+    background-color: gainsboro;
+}

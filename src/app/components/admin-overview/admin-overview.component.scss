@@ -1,0 +1,42 @@
+// .hc-userGroup{
+//     background-image : url('assets/Image/background8.jpg');
+//     height: -webkit-fill-available;
+//     background-repeat: round;
+// }
+.hc-userGroupContent{
+    background-color:white;
+    padding: 0 0px;    
+}
+.hc-addNewUserDiv{
+    font-size: 1.5em;
+    text-decoration: none;
+    float: right;
+}
+.mytable
+{
+     
+    thead, tbody{
+       
+        padding:10px;
+        .fa-filter{
+            float: right;
+        }
+        td{
+            padding: 0.5em;
+        }
+        th{
+            font-size: 1em;
+        }
+    }
+
+    tbody {
+        // display: block;
+            height:100px;
+            overflow-y:scroll;
+    }
+}
+.pagination{
+    background-color: gainsboro;
+    float: right;
+
+}

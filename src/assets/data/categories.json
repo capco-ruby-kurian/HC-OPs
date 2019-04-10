@@ -1,0 +1,42 @@
+[
+    {
+        "categoryName": "On-Boarding",
+        "subcategory": [
+            {
+                "subcategoryname": "Induction"
+            },
+            {
+                "subcategoryname": "PF trasfer form previous organization"
+            },
+            {
+                "subcategoryname": "Queries regarding Howden"
+            },
+            {
+                "subcategoryname": "Queries regarding ID card"
+            },
+            {
+                "subcategoryname": "Queries regarding access card"
+            }
+        ]
+    },
+    {
+        "categoryName": "Exit Off-Boarding",
+        "subcategory": [
+            {
+                "subcategoryname": "FnF related queries"
+            },
+            {
+                "subcategoryname": "QnF documents"
+            },
+            {
+                "subcategoryname": "Retention Bonus Recovery"
+            },
+            {
+                "subcategoryname": "Checklist for exit"
+            },
+            {
+                "subcategoryname": "Exit Process Explanation"
+            }
+        ]
+    }
+]

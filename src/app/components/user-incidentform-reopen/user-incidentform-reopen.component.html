@@ -1,0 +1,101 @@
+<div class="container">
+  
+    <div class="panel panel-default">
+      <!-- <div class="panel-heading">
+              <button aria-label="Form menu" class="btn btn-link glyphicon glyphicon-menu-hamburger"></button> New Incident
+              <button title="Add attachment" class="btn btn-link pull-right fa fa-paperclip fa-2x"></button>
+          </div> -->
+      <div class="panel-body">
+        <h4 style="border-bottom:1px solid grey">Incident</h4>
+        <form [formGroup]="reopenForm">
+          <div class="form-group">
+ 
+            <label> Incident Number</label> <input type="text" class="form-control"  [(ngModel)]="incidentId" name="incidentid" formControlName="inc" readonly>
+          </div>
+          <div class="form-group">
+            <label> State</label> <input type="text" class="form-control"  [(ngModel)]="status" name="status" formControlName="state" readonly>
+          </div>
+          <div class="form-group">
+            <label> Requestor</label> <input type="text" class="form-control" [(ngModel)]="requestor" name="requestor" formControlName="name" readonly>
+          </div>
+          <!-- <div class="form-group">
+            <label><span class="mandatory-symbol">* </span>Location</label>
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="city">
+              <option *ngFor="let loc of locationname">{{loc}}</option>                           
+                   </select>
+                  
+          </div> -->
+          <div class="form-group">
+            <label><span class="mandatory-symbol">* </span>Location</label>
+            <input type="text" class="form-control" [(ngModel)]="location" name="location" formControlName="city" readonly>
+            <!-- <select class="form-control" [(ngModel)]="location" name="location" formControlName="city" required>
+                <option *ngFor="let loc of locationname">{{loc}}</option>             
+               </select> -->
+            <div *ngIf="city.invalid && city.touched" class="alert alert-danger">
+              <div *ngIf="city.errors.required">City is required.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label><span class="mandatory-symbol">* </span>Category</label>
+            <input type="text" class="form-control" [(ngModel)]="category" name="category" formControlName="categories" readonly>
+            <!-- <select class="form-control" name="category" [(ngModel)]="category" formControlName="categories" required (change)="setOptions()">
+              <option selected>---Select Category---</option>
+          <option *ngFor="let c of categories">{{c.name}}</option>
+        </select> -->
+            <!-- <div *ngIf="category.invalid && category.touched" class="alert alert-danger">
+              <div *ngIf="category.errors.required">Category is required.</div>
+            </div>-->
+          </div> 
+          <div class="form-group">
+            <label><span class="mandatory-symbol">* </span>Sub Category</label>
+            <input type="text" class="form-control" [(ngModel)]="subcategory" name="subcategory" formControlName="subCategory" readonly>
+            
+            <!-- <select id="" class="form-control" name="sc" [(ngModel)]="sc" formControlName="subCategory" required>
+              <option selected>---Select Sub-Category---</option>
+              <option *ngFor="let c of sub">{{c}}</option>
+            </select> -->
+            <div *ngIf="subCategory.invalid && subCategory.touched" class="alert alert-danger">
+              <div *ngIf="subCategory.errors.required">Sub Category is required.</div>
+            </div>
+          </div>
+   
+          <div class="form-group">
+           <label for="exampleFormControlTextarea1"><span class="mandatory-symbol">* </span>Description</label>
+            <!-- <textarea class="form-control" rows="2" readonly formControlName="description1">
+              
+            </textarea> -->
+            <ul *ngFor="let describe of incdescription"  style="border:1px solid #b7b7b7;background-color:#eee; border-radius: 5px;">    
+              <li>{{describe.description}}</li>
+            </ul>
+          
+            <!-- <div *ngIf="description.invalid && description.touched" class="alert alert-danger">
+              <div *ngIf="description.errors.required">Description is required.</div>
+            </div> -->
+          </div>
+        
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1"><span class="mandatory-symbol">* </span>Solution</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" required formControlName="solution" disabled></textarea>
+            <div *ngIf="solution.invalid && solution.touched" class="alert alert-danger">
+              <div *ngIf="solution.errors.required">Solution is required.</div>
+            </div>
+          </div>
+          <ng-container *ngIf="show">
+          <div class="form-group">
+              <label><span class="mandatory-symbol">* </span>Reason To Reopen</label>
+              <textarea class="form-control" [(ngModel)]="reason" formControlName="solution" name="reason" rows="2"></textarea>
+              <!-- <div *ngIf="solution.invalid && solution.touched" class="alert alert-danger">
+                <div *ngIf="solution.errors.required">Reason is required.</div> -->
+              <!-- </div> -->
+            </div>
+          </ng-container>
+          <!-- <button value="" class="btn btn-primary" [disabled]="reopenForm.invalid">Reopen</button> -->
+          <button (click)="toggle()" id="bt">
+              {{buttonName}}
+          </button>
+        </form>
+      </div>
+    </div>
+  
+  </div>

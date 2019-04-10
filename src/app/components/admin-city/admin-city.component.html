@@ -1,0 +1,18 @@
+<kendo-grid [data]="gridData" 
+[pageSize]="5" [sortable]="true" [sort]="sort" [pageable]="true"
+(edit)="editHandler($event)" (cancel)="cancelHandler($event)" (save)="saveHandler($event)"
+  (remove)="removeHandler($event)" (add)="addHandler($event)">
+  <ng-template kendoGridToolbarTemplate>
+    <button kendoGridAddCommand>Add new</button>
+  </ng-template>
+  <kendo-grid-column field="cityName" title="Cities" width="200">
+  </kendo-grid-column>
+  <kendo-grid-command-column title="command" width="220">
+    <ng-template kendoGridCellTemplate let-dataItem let-isNew="isNew">
+      <button kendoGridEditCommand [primary]="true"><span class="k-icon k-i-pencil"></span></button>
+      <button kendoGridRemoveCommand (click)="removeItems(dataItem)"><span class="k-icon k-i-delete" ></span></button>
+      <button kendoGridSaveCommand [disabled]="formGroup?.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
+      <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+    </ng-template>
+  </kendo-grid-command-column>
+  </kendo-grid>

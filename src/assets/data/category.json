@@ -1,0 +1,69 @@
+{
+    "categories":[
+        {
+            
+            "categoryName": "On-Boarding",
+            "subcategory":[
+                {
+                    
+                    "subcategoryName": "Induction timelines"
+                },
+                {
+                    
+                    "subcategoryName": "PF transfer from previous organization"
+                },
+                {
+                    
+                    "subcategoryName": "Queries regarding Howden"
+                },
+                {
+                    
+                    "subcategoryName": "Queries regarding Laptop"
+                },
+                {
+                    
+                    "subcategoryName": "Queries regarding ID card"
+                },
+                {
+                    
+                    "subcategoryName": "Queries regarding access card"
+                }
+            ]
+         },
+         {
+           
+            "categoryName": "Exit-Off-Boarding",
+            "subcategory":[
+                {
+                  
+                    "subcategoryName": " FnF related queries"
+                },
+                {
+                    
+                    "subcategoryName": "FNF documents"
+                },
+                {
+                  
+                    "subcategoryName": "Retention Bonus Recovery"
+                },
+                {
+                    
+                    "subcategoryName": "Checklist for exit"
+                },
+                {
+                   
+                    "subcategoryName": "Project code for Timesheet updationt"
+                },
+                {
+                   
+                    "subcategoryName": "Resignation acceptance letter"
+                },
+                {
+                    
+                    "subcategoryName": "Exit Process Explanation"
+                }
+                
+            ]
+         }
+    ]
+}

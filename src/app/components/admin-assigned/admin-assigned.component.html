@@ -1,0 +1,56 @@
+<!-- body
+<div class="ad-margin">
+  <div class="row">
+    <div class="col">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3>Assigned Incidents</h3>
+        </div>
+        <div class="panel-body">
+            <kendo-grid [kendoGridBinding]="assignedData" [height]="410" [pageSize]="10" [pageable]="true" [groupable]="true">
+                <kendo-grid-column field="incidentId" title="Incident Number" [width]="100">
+                  <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                    <a [routerLink]="['/admin-header/admin-resolver']" (click)="selectRow(dataItem)">{{dataItem.incidentId}}</a>
+                    </ng-template> 
+                </kendo-grid-column>
+                <kendo-grid-column field="requestor" title="Requestor" [width]="120"></kendo-grid-column>
+              
+                <kendo-grid-column field="category" title="Category" [width]="140"></kendo-grid-column>
+                <kendo-grid-column field="subcategory" title="subcategory" [width]="140"></kendo-grid-column>
+                <kendo-grid-column field="createdAt" title="Created" [width]="130"></kendo-grid-column>
+                <kendo-grid-column field="assignedTo.username" title="Assigned To" [width]="130"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- body -->
+<div class="ad-margin">
+  <div class="row">
+    <div class="col">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3>Assigned Incidents</h3>
+        </div>
+        <div class="panel-body">
+            <kendo-grid [kendoGridBinding]="gridData" [height]="410" [pageSize]="10" [pageable]="true" [groupable]="true">
+                <kendo-grid-column field="incidentId" title="Incident Number" [width]="100">
+                  <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                    <a [routerLink]="['/admin-header/admin-resolver']" (click)="selectRow(dataItem)">{{dataItem.incidentId}}</a>
+                    </ng-template> 
+                </kendo-grid-column>
+                <kendo-grid-column field="requestor" title="Requestor" [width]="120"></kendo-grid-column>
+              
+                <kendo-grid-column field="category" title="Category" [width]="140"></kendo-grid-column>
+                <kendo-grid-column field="subcategory" title="subcategory" [width]="140"></kendo-grid-column>
+                <kendo-grid-column field="createdAt" title="Created" [width]="130"></kendo-grid-column>
+                <kendo-grid-column field="assignedTo" title="Assigned To" [width]="130"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

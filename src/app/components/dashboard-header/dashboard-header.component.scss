@@ -1,0 +1,97 @@
+// header css
+.usr-logo
+{
+   max-width: 50%;
+}
+.navbar
+{
+    border: none;
+    margin-bottom:0px;
+    // width: 100%;
+    // position: fixed;   
+    
+}
+ .usr-nav-head
+{
+    background-color: black;    
+}
+.usr-nav-togg{
+    overflow: hidden;
+}
+.nav li a
+{
+    color: white;
+}
+.nav li a:hover
+{
+    background-color: #035EB7;
+}
+
+// // content
+// .usr-image-hr
+// {
+//    width:100%;
+//    opacity:0.7;
+//    position: relative; 
+//    height:565px;
+// }
+
+// //css for main content
+// .carousel-form{
+//     position: absolute;
+//     // right:10%;
+//     bottom:40%;
+//     left:40%;
+//     top:73%;
+//     margin: 0px auto;
+//     z-index:10;
+//     padding-top:0px;
+//     padding-bottom:0px;
+//     color:#0D0D0C;
+//     text-align: center;
+//     text-shadow:0 1px 2px rgba(0,0,0,.6);
+// }
+
+// // for toggle button
+// .usr-btn-toggle
+// {
+//     background-color: gray;
+//     border-radius: 5px;
+// }
+// .icon-bar
+// {
+//     background-color: white;
+// }
+// .usr-text-center {
+//     position: absolute;
+//     top: 20%;
+//     left: 38%;
+//     color: black;
+//     font-weight: bold;
+//     //font-size: 70px;  
+// }
+
+// .usr-font-content{
+//     font-family: 'Montserrat', sans-serif;
+// }
+.usr-font-nav
+{
+    font-family: 'Bree Serif', serif;
+    font-size: 15px;
+}
+// img{
+//     height: auto;
+//     width: 100%;
+// }
+
+
+ .dropdown-menu {
+     background-color: black;
+     min-width: 129px;
+//     display: none;
+//     position: absolute;
+//     background-color: #f1f1f1;
+//     min-width: 100px;
+//     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+//     z-index: 1;
+ }

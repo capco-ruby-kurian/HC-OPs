@@ -1,0 +1,35 @@
+<!-- body -->
+<div class="ad-margin">
+    <div class="row">
+      <div class="col">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3>UnAssigned Incidents</h3>
+          </div>
+          <div class="panel-body">
+              <kendo-grid [data]="gridData" [height]="410" [pageSize]="10" [pageable]="true" [groupable]="true" (remove)="removeHandler($event)">
+                  <ng-template kendoGridToolbarTemplate let-dataItem>
+                      <kendo-dropdownlist [data]="listItems" [textField]="'username'" [valueField]="'id'" [(ngModel)]="username">
+                        </kendo-dropdownlist>
+                      <button (click)="removeItems(dataItem)">Assign</button>{{username}}
+                      
+                      </ng-template>
+                      <kendo-grid-column field="incidentId" title="Incident Number" [width]="100"></kendo-grid-column>
+                      <kendo-grid-column field="requestor" title="Requestor" [width]="120"></kendo-grid-column>
+                      <kendo-grid-column field="category" title="category" [width]="100"></kendo-grid-column>
+                      <kendo-grid-column field="subcategory" title="subcategory" [width]="140"></kendo-grid-column>
+                      <kendo-grid-column field="createdAt" title="Created" [width]="130"></kendo-grid-column>
+                  <kendo-grid-column field="Discontinued" title="Select" width="120">
+                      <ng-template kendoGridCellTemplate let-dataItem>
+                          <input type="checkbox" (change)="assignedItems(dataItem,$event)"/>
+                      </ng-template>
+                  </kendo-grid-column>
+                  
+              </kendo-grid>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

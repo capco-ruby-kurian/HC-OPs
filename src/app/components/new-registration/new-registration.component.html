@@ -1,0 +1,86 @@
+
+<form  [formGroup]="registrationForm" class="form-group list-group list-group-sm">
+  <div class="list-group-item">
+    <label for="username" class="sr-only ng-binding">User name</label>
+    <input id="username" [(ngModel)]='username' required name="username" class=" form-control " type="text" placeholder="Enter Name " autofocus="true"
+    role="textbox" aria-invalid="false" formControlName="userName">
+    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
+      <div *ngIf="userName.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="userName.errors.pattern">
+        Name should contain only alphabets.
+      </div>
+     </div>
+  </div>  
+  
+  <div class="list-group-item ">
+      <label for="userId" class="sr-only ng-binding">Capco ID</label>
+      <input id="userid" [(ngModel)]='userid' required name="userid" class=" form-control " type="text" placeholder="Enter Capco's User ID" autofocus="true"
+        role="textbox" aria-invalid="false" formControlName="userId">
+        <div *ngIf="userId.invalid && (userId.dirty || userId.touched)" class="alert alert-danger">
+          <div *ngIf="userId.errors.required">
+            User Id is required.
+          </div>
+          <div *ngIf="userId.errors.pattern">
+            User Id should contain only alphabets.
+          </div>
+          <div *ngIf="userId.errors.minlength">
+            Mininum  length should be 4 characters.
+          </div>
+          <div *ngIf="userId.errors.maxlength">
+            Maximum length should not be more than 4 characters.
+          </div>
+         
+         </div>
+    </div>
+
+      
+  <div class="list-group-item">
+    
+      <label for="email" class="sr-only ng-binding">Email ID</label>
+      <input id="email" [(ngModel)]='email' required name="email" class="form-control" type="text" placeholder="Enter Email ID" role="textbox"
+        aria-invalid="false" formControlName="emailId">
+        <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="alert alert-danger">
+          <div *ngIf="emailId.errors.required">
+            email is required.
+          </div>
+          <div *ngIf="emailId.errors.pattern">
+            the email address should contain @capco.com
+          </div>
+        </div>
+  </div>
+
+  <div class="form-group list-group-item">
+    <label for="password" class="sr-only ng-binding">Password</label>
+    <input id="password" [(ngModel)]='password' required name="password" class="form-control" type="password" placeholder="Password" role="textbox"
+      aria-invalid="false" formControlName="pass">
+    <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
+        <div *ngIf="pass.errors.required">
+          Password is required.
+        </div>
+        <div *ngIf="pass.errors.minlength">
+          Mininum  length should be atleast 8 characters.
+        </div> 
+      </div> 
+  </div> 
+  <div class="form-group list-group-item">
+    <label for="confirm password" class="sr-only ng-binding">Confirm Password</label>
+    <input id="confirm_password" [(ngModel)]='confirm_password'  required name="confirm_password" class="form-control" type="password" placeholder="Confirm Password"
+      aria-invalid="false" formControlName="confirmPassword">
+      <!-- <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="alert alert-danger">
+        <div *ngIf="confirmPassword.errors.required">
+          Password is required.
+        </div>
+        <div *ngIf="confirmPassword.errors.minlength">
+          Mininum  length should be atleast 8 characters.
+        </div> 
+      </div>  -->
+      <div *ngIf="registrationForm.controls.confirmPassword.errors?.required && registrationForm.controls.confirmPassword.touched">Repeat password is required</div> 
+      <div *ngIf="registrationForm.controls.confirmPassword.errors?.MatchPassword">Password does not match</div> 
+  </div>
+  
+  <br>
+ 
+  <button  name="login" type="submit" class="btn btn-primary btn-block" role="button" (click)="registerfn()"  [disabled]="registrationForm.invalid"> Register now </button><br>
+</form>

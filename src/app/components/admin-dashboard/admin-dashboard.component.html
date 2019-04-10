@@ -1,0 +1,237 @@
+<!-- dashboard -->
+<div class="ad-margin">
+  <!-- Request details Graph -->
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Request Resolution Time Trend</h4>
+          <!-- filter and setting for downloads -->
+          <div class="pull-right" style="position: absolute;
+          top: 10px;
+          right: 20px">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                        <i class="fa fa-gear" style="font-size:15px"></i>
+                    </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item ">
+                        <span class="dwn" (click)="exportChart()">
+                            <i class="fa fa-images"></i>
+                          Export as Image
+                         </span>
+                        </a>
+                <br>
+                <a class="dropdown-item">
+                          <i class="fa fa-file-excel"></i>
+                          <span class="dwn" (click)="exportExcel()">
+                              Export as Excel
+                            </span>
+                      </a>
+                <br>
+                <a class="dropdown-item">
+                          <span><i class="fa fa-file-pdf"></i></span>
+                          <span class="dwn" (click)="exportPDF()">
+                              Export as PDF
+                            </span>
+                      </a>
+              </div>
+            </div>
+            <!-- filters -->
+          </div>
+          <!-- end -->
+        </div>
+        <div class="panel-body">
+          <div class="example-config">
+            <label for="bu"><i class="fa fa-filter" style="font-size:24px"></i></label>
+            <select id="bu" [(ngModel)]="barUnit">
+                  <option value="days">days</option>
+                  <option value="weeks" selected>weeks</option>
+                  <option value="months">months</option>
+                  <option value="years">years</option>
+                  <option value="quaterly">quater</option>
+                </select>
+          </div>
+          <kendo-chart #chart>
+            <kendo-chart-series>
+              <kendo-chart-title text="Daily Request Time Trend"></kendo-chart-title>
+              <kendo-chart-series-item type="scatterLine" *ngFor="let item of barAxis" [data]="item.rangeFilter" [name]="item.location"
+                yField="incidentCreated" xField="Date">
+              </kendo-chart-series-item>
+            </kendo-chart-series>
+            <kendo-chart-tooltip format="{0}"></kendo-chart-tooltip>
+            <kendo-chart-x-axis>
+              <kendo-chart-x-axis-item [baseUnit]="barUnit">
+              </kendo-chart-x-axis-item>
+            </kendo-chart-x-axis>
+          </kendo-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>City wise SLA's Tracking</h4>
+          <!-- filter and setting for downloads -->
+          <div class="pull-right" style="position: absolute;
+          top: 10px;
+          right: 20px">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                        <i class="fa fa-gear" style="font-size:15px"></i>
+                    </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item ">
+                        <span class="dwn" (click)="exportChart()">
+                            <i class="fa fa-images"></i>
+                          Export as Image
+                         </span>
+                        </a>
+                <br>
+                <a class="dropdown-item">
+                          <i class="fa fa-file-excel"></i>
+                          <span class="dwn" (click)="exportExcel()">
+                              Export as Excel
+                            </span>
+                      </a>
+                <br>
+                <a class="dropdown-item">
+                          <span><i class="fa fa-file-pdf"></i></span>
+                          <span class="dwn" (click)="exportPDF()">
+                              Export as PDF
+                            </span>
+                      </a>
+              </div>
+            </div>
+            <!-- filters -->
+          </div>
+
+
+          <!-- end -->
+        </div>
+        <div class="panel-body">
+          <div class="example-config">
+            <label for="bu"><i class="fa fa-filter" style="font-size:24px"></i></label>
+            <select id="bu" [(ngModel)]="lineUnit">
+              <option value="days">days</option>
+              <option value="weeks" selected>weeks</option>
+              <option value="months">months</option>
+              <option value="years">years</option>
+              <option value="quaterly">quater</option>
+            </select>
+          </div>
+
+          <kendo-chart #chart>
+            <kendo-chart-series>
+              <kendo-chart-title text="Daily Request Time Trend"></kendo-chart-title>
+              <kendo-chart-series-item type="scatterLine" *ngFor="let item of ctyAxis" [data]="item.RangeFilter" [name]="item.name" yField="TMax"
+                xField="Date">
+              </kendo-chart-series-item>
+            </kendo-chart-series>
+            <kendo-chart-tooltip format="{0}"></kendo-chart-tooltip>
+            <kendo-chart-x-axis>
+              <kendo-chart-x-axis-item [baseUnit]="lineUnit">
+              </kendo-chart-x-axis-item>
+            </kendo-chart-x-axis>
+          </kendo-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Daily new request trend</h4>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover table-responsive">
+            <tbody>
+              <tr>
+                <td>Active Incidents</td>
+                <td></td>
+                <td><button class="button ad-button ad-activeBg pull-right" [routerLink]="['/admin-header/admin-resolver']">
+                        <div class="ad-active">{{open}}%</div>
+                        </button>
+                </td>
+              </tr>
+              <tr>
+                <td>In-progress Incidents</td>
+                <td></td>
+                <td><button class="button ad-button ad-activeBg pull-right" [routerLink]="['/admin-header/admin-resolver']">
+                        <div class="ad-active">{{inprogress}}%</div>
+                        </button>
+                </td>
+              </tr>
+              <tr>
+                <td>OnHold Incidents</td>
+                <td></td>
+                <td><button class="button ad-button ad-holdBg pull-right" [routerLink]="['/admin-header/admin-resolver']">
+                        <div class="ad-active">{{onhold}}%</div>
+                        </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Resolved Incidents</td>
+                <td></td>
+                <td><button class="button ad-button ad-resolvedBg pull-right" [routerLink]="['/admin-header/resolved']">
+                        <div class="ad-active">{{resolved}}%</div>
+                        </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Cancled Incidents</td>
+                <td></td>
+                <td><button class="button ad-button ad-cancledBg pull-right" [routerLink]="['/admin-header/admin-resolver']">
+                        <div class="ad-active">{{cancled}}%</div>
+                        </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Closed Incidents</td>
+                <td></td>
+                <td><button class="button ad-button ad-cancledBg pull-right" [routerLink]="['/admin-header/admin-resolver']">
+                        <div class="ad-active">{{closed}}%</div>
+                        </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Re-Opened Incidents</td>
+                <td></td>
+                <td><button class="button ad-button ad-cancledBg pull-right" [routerLink]="['/admin-header/admin-resolver']">
+                        <div class="ad-active">{{reOpen}}%</div>
+                        </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Incidents Details for the month of March(2018)</h4>
+        </div>
+        <div class="panel-body">
+          <kendo-grid [data]="gridData" [height]="410" [pageSize]="10" [pageable]="true" [groupable]="true">
+            <kendo-grid-column field="incidentId" title="Incident Number" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="requestor" title="Requestor" [width]="100"></kendo-grid-column>
+            <ng-template let-dataItem>
+              <kendo-grid-column field="status" title="Status" [width]="120"></kendo-grid-column>
+            </ng-template>
+            <kendo-grid-column field="category" title="Category" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="subcategory" title="SubCategory" [width]="140"></kendo-grid-column>
+            <kendo-grid-column field="createdAt" title="Created" [width]="130"></kendo-grid-column>
+
+          </kendo-grid>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- end of content -->
+</div>

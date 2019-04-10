@@ -1,0 +1,42 @@
+<form class="form-group list-group list-group-sm" [formGroup]="loginForm">
+  <div class="list-group-item">
+    <label for="username" class="sr-only ng-binding"></label>
+    <input type="text" name="userid" [(ngModel)]='userid' class=" form-control " placeholder="User ID" autofocus="true" formControlName="userId"
+      required>
+    <div *ngIf="userId.invalid && (userId.dirty || userId.touched)" class="alert alert-danger">
+      <div *ngIf="userId.errors.required">
+        User Id is required.
+      </div>
+      <div *ngIf="userId.errors.pattern">
+        User Id should contain only alphabets.
+      </div>
+      <div *ngIf="userId.errors.minlength">
+        Mininum length should be 4 characters.
+      </div>
+      <div *ngIf="userId.errors.maxlength">
+        Maximum length should not be more than 4 characters.
+      </div>
+    </div>
+  </div>
+  <div class="list-group-item">
+    <label for="password" class="sr-only ng-binding">Password</label>
+    <input type="password" [(ngModel)]='password' name="password" class="form-control" placeholder="Password" formControlName="passWord"
+      required>
+
+    <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)" class="alert alert-danger">
+      <div *ngIf="passWord.errors.required">
+        Password is required.
+      </div>
+      <div *ngIf="passWord.errors.minlength">
+        Mininum length should be atleast 8 characters.
+      </div>
+
+    </div>
+  </div><br>
+
+  <div class="hc-rememberme">
+    <span class="hc-checkbox"><input type="checkbox"></span>
+    <span class="hc-cbtext">Remember me</span>
+  </div><br>
+  <button name="login" type="submit" class="btn btn-primary btn-block" (click)="loginfn()" [disabled]="loginForm.invalid"> Login </button><br>
+</form>

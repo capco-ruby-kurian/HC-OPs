@@ -1,0 +1,40 @@
+<div class="container content">
+    <h1 class="usr-incident-text">Incidents</h1>
+    <div class="row inner">
+      <div class="col-xs-12" style="margin-bottom:30px;">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-4">
+                  <h3>My Incidents history</h3>
+              </div>
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <a class="btn btn-primary btn-md pull-right" [routerLink]="['/main/user-incident-form']">Raise a Request</a>
+              </div>
+            </div>
+            <!-- <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-md pull-right" [routerLink]="['/main/user-incident-form']">Raise a Request</a>
+            </div> -->
+          </div>
+         <div class="panel-body">
+           <kendo-grid [kendoGridBinding]="gridData" [pageSize]="10" [pageable]="true" [filterable]="true"
+            [height]="400">
+            <!-- <kendo-grid-column field="incno" [width]="100">
+                    <a [routerLink]="['/admin-header/admin-resolver']" (click)="selectRow(dataItem)">{{dataItem.INC}}</a>
+            </kendo-grid-column> -->
+            <kendo-grid-column field="incidentId" title="Incident Number" [width]="100">
+                  <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                    <a [routerLink]="['/main/user-incidentform-reopen',dataItem.incidentId]" >{{dataItem.incidentId}}</a>                    </ng-template> 
+                </kendo-grid-column>
+            <kendo-grid-column field="status" [width]="120"></kendo-grid-column>
+            <kendo-grid-column field="category" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="subcategory" [width]="100"></kendo-grid-column>            
+            <kendo-grid-column field="createdAt" [width]="130"></kendo-grid-column>
+          </kendo-grid>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

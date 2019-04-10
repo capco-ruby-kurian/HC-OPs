@@ -1,0 +1,29 @@
+.ad-margin{
+    margin: 20px;
+}
+.mandatory-symbol{
+    color: red;
+}
+
+
+// .ng-valid[required], .ng-valid.required  {
+//     border-left: 5px solid #42A948; /* green */
+//   }
+  
+//   .ng-invalid:not(form)  {
+//     border-left: 5px solid #a94442; /* red */
+//   }
+
+  #fileupload-example-5 {
+    position: relative;
+    overflow: hidden;
+}
+
+#fileupload-example-5 input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.001
+}
